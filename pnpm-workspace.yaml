@@ -1,3 +1,9 @@
+packages:
+  - "."
+  - "client/*"
+  - "server/*"
+  - "shared/*"
+
 ignoredBuiltDependencies:
   - '@swc/core'
   - blake-hash
