@@ -152,12 +152,22 @@ export const TransactionFlow: React.FC<TransactionFlowProps> = ({
     } catch (err) {
       console.error("Transaction flow fetch error:", err);
 
-      // Fallback to mock data if API fails
-      console.warn("API failed, falling back to mock data");
-      const mockData = generateMockFlowData(walletAddress);
-      setFlowData(mockData);
-      setIsUsingMockData(true);
-      setError(null); // Clear error since we have fallback data
+      // Only show error if we can't use mock data fallback
+      if (!backendUrl) {
+        // If no backend URL is configured, use mock data
+        console.warn("No backend configured, using mock data");
+        const mockData = generateMockFlowData(walletAddress);
+        setFlowData(mockData);
+        setIsUsingMockData(true);
+        setError(null);
+      } else {
+        // Backend is configured but failed, try mock data as fallback
+        console.warn("Backend failed, falling back to mock data");
+        const mockData = generateMockFlowData(walletAddress);
+        setFlowData(mockData);
+        setIsUsingMockData(true);
+        setError(null); // Clear error since we have fallback data
+      }
     } finally {
       setIsLoading(false);
     }
