@@ -1,0 +1,13 @@
+# Railway ignore file
+pnpm-lock.yaml
+.pnpm-debug.log
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+node_modules
+.git
+.gitignore
+README.md
+*.log
+.DS_Store

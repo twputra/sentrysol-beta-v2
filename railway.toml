@@ -1,0 +1,13 @@
+[build]
+builder = "nixpacks"
+buildCommand = "npm run build:railway"
+
+[deploy]
+startCommand = "npm start"
+restartPolicyType = "on_failure"
+restartPolicyMaxRetries = 10
+
+[environment]
+NODE_ENV = "production"
+NIXPACKS_INSTALL_CMD = "npm ci"
+NIXPACKS_BUILD_CMD = "npm run build:railway"
