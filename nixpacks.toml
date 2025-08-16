@@ -1,8 +1,17 @@
 [build]
 builder = "nixpacks"
 
+[phases.setup]
+nixPkgs = ["nodejs-18_x", "pnpm"]
+
+[phases.install]
+cmds = ["pnpm install --frozen-lockfile"]
+
+[phases.build]
+cmds = ["pnpm run build:production"]
+
+[start]
+cmd = "pnpm start"
+
 [variables]
 NODE_ENV = "production"
-NIXPACKS_NODE_VERSION = "18.x"
-NIXPACKS_BUILD_CMD = "npm install -g pnpm && pnpm install && pnpm run build:production"
-NIXPACKS_START_CMD = "pnpm start"
