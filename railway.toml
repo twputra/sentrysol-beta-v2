@@ -1,6 +1,5 @@
 [build]
 builder = "nixpacks"
-buildCommand = "pnpm install && pnpm run build:production"
 
 [deploy]
 startCommand = "node dist/server/node-build.mjs"

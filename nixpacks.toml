@@ -7,8 +7,8 @@ aptPkgs = ["build-essential"]
 
 [phases.install]
 cmds = [
-  "npm install -g pnpm",
-  "pnpm config set store-dir .pnpm-store",
+  "npm install -g pnpm@latest",
+  "export PATH=\"/root/.local/share/pnpm:$PATH\"",
   "pnpm install --frozen-lockfile"
 ]
 
