@@ -1,14 +1,25 @@
 [variables]
 NODE_ENV = "production"
 
+[build]
+builder = "nixpacks"
+
 [phases.setup]
-nixPkgs = ["nodejs", "npm"]
+nixPkgs = ["nodejs-18_x"]
+aptPkgs = ["build-essential"]
 
 [phases.install]
-cmds = ["npm install -g pnpm", "pnpm install"]
+cmds = [
+  "npm install -g pnpm",
+  "pnpm config set store-dir .pnpm-store",
+  "pnpm install --frozen-lockfile"
+]
 
 [phases.build]
 cmds = ["pnpm run build:production"]
 
 [start]
 cmd = "pnpm start"
+
+[variables]
+NODE_ENV = "production"
