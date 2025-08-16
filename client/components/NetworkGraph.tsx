@@ -56,7 +56,8 @@ export const NetworkGraph: React.FC<NetworkGraphProps> = ({ graphData, height = 
 
     // Prepare edges
     const edges = new DataSet(
-      graphData.edges.map(edge => ({
+      graphData.edges.map((edge, index) => ({
+        id: `${edge.from}-${edge.to}-${index}`,
         from: edge.from,
         to: edge.to,
         label: `${edge.weight.toFixed(2)} SOL (${edge.count}x)`,
@@ -73,6 +74,7 @@ export const NetworkGraph: React.FC<NetworkGraphProps> = ({ graphData, height = 
           color: '#fff'
         },
         smooth: {
+          enabled: true,
           type: 'continuous',
           roundness: 0.3
         }

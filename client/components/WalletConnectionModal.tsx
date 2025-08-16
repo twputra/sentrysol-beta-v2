@@ -4,11 +4,7 @@ import { X } from "lucide-react";
 // TypeScript declaration for window.ethereum
 declare global {
   interface Window {
-    ethereum?: {
-      request: (args: { method: string; params?: any[] }) => Promise<any>;
-      selectedAddress: string | null;
-      isMetaMask?: boolean;
-    };
+    ethereum?: any;
   }
 }
 import { Button } from "@/components/ui/button";

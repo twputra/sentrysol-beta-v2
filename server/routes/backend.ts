@@ -297,9 +297,9 @@ function generateMockThreatAnalysis(address: string, riskScore: number, riskLeve
       reason: 'Wallet has elevated risk indicators based on transaction history and connected addresses',
       confidence: 'Medium',
       supporting_evidence: {
-        risk_indicators: 'Multiple red flags detected',
-        address_clustering: 'Connected to flagged addresses',
-        transaction_volume: 'Unusual volume patterns'
+        transaction_frequency: 'Above average',
+        transaction_amounts: 'Consistently small values',
+        time_pattern: 'Regular intervals'
       },
       recommended_actions: [
         'Enhanced due diligence required',
