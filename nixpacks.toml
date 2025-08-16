@@ -1,23 +1,8 @@
 [build]
 builder = "nixpacks"
 
-[phases.setup]
-nixPkgs = ["nodejs-18_x"]
-aptPkgs = ["build-essential"]
-
-[phases.install]
-cmds = [
-  "npm install -g pnpm@latest",
-  "export PATH=\"/root/.local/share/pnpm:$PATH\"",
-  "pnpm install --frozen-lockfile"
-]
-
-[phases.build]
-cmds = ["pnpm run build:production"]
-
-[start]
-cmd = "pnpm start"
-
 [variables]
 NODE_ENV = "production"
 NIXPACKS_NODE_VERSION = "18.x"
+NIXPACKS_BUILD_CMD = "npm install -g pnpm && pnpm install && pnpm run build:production"
+NIXPACKS_START_CMD = "pnpm start"

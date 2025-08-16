@@ -1,8 +1,9 @@
 [build]
 builder = "nixpacks"
+buildCommand = "npm install -g pnpm && pnpm install && pnpm run build:production"
 
 [deploy]
-startCommand = "node dist/server/node-build.mjs"
+startCommand = "pnpm start"
 healthcheckPath = "/"
 healthcheckTimeout = 100
 restartPolicyType = "ON_FAILURE"
@@ -11,4 +12,3 @@ restartPolicyMaxRetries = 10
 [environment]
 NODE_ENV = "production"
 PORT = "3000"
-NIXPACKS_NODE_VERSION = "18.x"
