@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { ChatBox } from "@/components/ChatBox";
 import { NetworkGraph } from "@/components/NetworkGraph";
 import { TransactionFlow } from "@/components/TransactionFlow";
+import { D3FundFlow } from "@/components/D3FundFlow";
 import {
   Activity,
   Shield,
@@ -25,7 +26,7 @@ export default function Dashboard() {
   const [progress, setProgress] = useState(0);
   const [logs, setLogs] = useState<string[]>([]);
   const [activeView, setActiveView] = useState<
-    "overview" | "chat" | "network" | "flow"
+    "overview" | "chat" | "network" | "flow" | "d3flow"
   >("overview");
   const [targetAddress, setTargetAddress] = useState<string>("");
   const [analysisTimeout, setAnalysisTimeout] = useState<NodeJS.Timeout | null>(
@@ -623,6 +624,17 @@ export default function Dashboard() {
             >
               <BarChart3 className="w-5 h-5" />
               Fund Flow
+            </button>
+            <button
+              onClick={() => setActiveView("d3flow")}
+              className={`flex items-center gap-2 px-4 py-3 rounded-xl font-poppins transition-colors whitespace-nowrap ${
+                activeView === "d3flow"
+                  ? "bg-sentry-accent text-white"
+                  : "text-white/70 hover:text-white hover:bg-white/5"
+              }`}
+            >
+              <BarChart3 className="w-5 h-5" />
+              D3 Fund Flow
             </button>
           </div>
         </div>
@@ -1348,6 +1360,13 @@ export default function Dashboard() {
         {activeView === "flow" && (
           <TransactionFlow
             walletAddress={targetAddress || publicKey?.toString() || ""}
+            isVisible={true}
+          />
+        )}
+
+        {activeView === "d3flow" && (
+          <D3FundFlow
+            address={targetAddress || publicKey?.toString() || ""}
             isVisible={true}
           />
         )}
