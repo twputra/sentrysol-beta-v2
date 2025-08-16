@@ -7,17 +7,19 @@ aptPkgs = ["build-essential"]
 
 [phases.install]
 cmds = [
+  "mkdir -p /usr/local/lib/node_modules",
+  "npm config set prefix '/usr/local'",
   "npm install -g pnpm@latest",
-  "export PATH=\"/usr/local/bin:$PATH\"",
-  "/usr/local/bin/pnpm config set auto-install-peers true",
-  "/usr/local/bin/pnpm install"
+  "ln -s /usr/local/lib/node_modules/pnpm/bin/pnpm.cjs /usr/local/bin/pnpm",
+  "pnpm config set auto-install-peers true",
+  "pnpm install"
 ]
 
 [phases.build]
-cmds = ["/usr/local/bin/pnpm run build:production"]
+cmds = ["pnpm run build:production"]
 
 [start]
-cmd = "/usr/local/bin/pnpm start"
+cmd = "pnpm start"
 runImage = "ubuntu:22.04"
 
 [variables]
