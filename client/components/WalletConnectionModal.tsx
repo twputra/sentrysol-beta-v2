@@ -16,7 +16,7 @@ import {
 } from "@/components/ui/dialog";
 import { useWallet } from "@/contexts/WalletContext";
 import { useWallet as useSolanaWallet } from "@solana/wallet-adapter-react";
-import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
+import { WalletMultiButton, useWalletModal } from "@solana/wallet-adapter-react-ui";
 
 interface WalletConnectionModalProps {
   isOpen: boolean;
@@ -29,7 +29,8 @@ export const WalletConnectionModal: React.FC<WalletConnectionModalProps> = ({
 }) => {
   const { isWalletConnected, walletAddress, connectWallet, isConnecting } =
     useWallet();
-  const { select, wallets, connect: solanaConnect } = useSolanaWallet();
+  const { wallets } = useSolanaWallet();
+  const { setVisible } = useWalletModal();
   const [selectedNetwork, setSelectedNetwork] = useState<"solana" | "ethereum">(
     "solana",
   );
@@ -39,15 +40,9 @@ export const WalletConnectionModal: React.FC<WalletConnectionModalProps> = ({
     setConnecting(true);
     try {
       if (selectedNetwork === "solana") {
-        const wallet = wallets.find((w) =>
-          w.adapter.name.toLowerCase().includes(walletName.toLowerCase()),
-        );
-        if (wallet) {
-          // Select and connect in one step using the Solana wallet adapter
-          select(wallet.adapter.name);
-          // Use the direct Solana connect method instead of our wrapper
-          await solanaConnect();
-        }
+        // Use the official Solana wallet modal for proper wallet selection and connection
+        setVisible(true);
+        onClose(); // Close our custom modal to avoid overlapping UI
       } else if (selectedNetwork === "ethereum") {
         // Handle Ethereum wallet connection
         if (walletName === "metamask" && window.ethereum) {
