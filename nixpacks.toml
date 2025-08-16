@@ -10,7 +10,8 @@ cmds = [
   "mkdir -p /usr/local/lib/node_modules",
   "npm config set prefix '/usr/local'",
   "npm install -g pnpm@latest",
-  "ln -s /usr/local/lib/node_modules/pnpm/bin/pnpm.cjs /usr/local/bin/pnpm",
+  "rm -f /usr/local/bin/pnpm",
+  "ln -sf /usr/local/lib/node_modules/pnpm/bin/pnpm.cjs /usr/local/bin/pnpm",
   "pnpm config set auto-install-peers true",
   "pnpm install"
 ]
