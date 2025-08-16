@@ -1,5 +1,5 @@
 [build]
-builder = "nixpacks"
+provider = "node"
 
 [phases.setup]
 nixPkgs = ["nodejs-18_x"]
@@ -8,16 +8,19 @@ aptPkgs = ["build-essential"]
 [phases.install]
 cmds = [
   "npm install -g pnpm@latest",
-  "pnpm config set auto-install-peers true",
-  "pnpm install --no-frozen-lockfile"
+  "export PATH=\"/usr/local/bin:$PATH\"",
+  "/usr/local/bin/pnpm config set auto-install-peers true",
+  "/usr/local/bin/pnpm install"
 ]
 
 [phases.build]
-cmds = ["pnpm run build:production"]
+cmds = ["/usr/local/bin/pnpm run build:production"]
 
 [start]
-cmd = "pnpm start"
+cmd = "/usr/local/bin/pnpm start"
+runImage = "ubuntu:22.04"
 
 [variables]
 NODE_ENV = "production"
 NIXPACKS_NODE_VERSION = "18.x"
+PORT = "3000"
