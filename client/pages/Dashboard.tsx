@@ -527,6 +527,13 @@ export default function Dashboard() {
     }
   };
 
+  useEffect(() => {
+    const el = document.querySelector(".wallet-adapter-dropdown-list");
+    if (el) {
+      el.classList.add("absolute", "bottom-full", "top-auto", "z-[99999]");
+    }
+  }, []);
+
   if (!connected) {
     return (
       <div className="min-h-screen main-gradient flex items-center justify-center px-4">
@@ -572,9 +579,7 @@ export default function Dashboard() {
             </span>
           </div>
           <div className="relative z-[99999]">
-            <div className="wallet-adapter-dropdown relative z-[99999]">
-              <WalletMultiButton className="!bg-sentry-sage !text-black !font-poppins !rounded-full hover:!bg-sentry-sage/90 relative z-[99999]" />
-            </div>
+            <WalletMultiButton className="!bg-sentry-sage !text-black !font-poppins !rounded-full hover:!bg-sentry-sage/90" />
           </div>
         </div>
       </header>
