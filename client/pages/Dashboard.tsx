@@ -572,7 +572,7 @@ export default function Dashboard() {
             </span>
           </div>
           <div className="relative">
-            <WalletMultiButton className="!bg-sentry-sage !text-black !font-poppins !rounded-full hover:!bg-sentry-sage/90 !z-50" />
+            <WalletMultiButton className="!bg-sentry-sage !text-black !font-poppins !rounded-full hover:!bg-sentry-sage/90 z-50" />
           </div>
         </div>
       </header>
