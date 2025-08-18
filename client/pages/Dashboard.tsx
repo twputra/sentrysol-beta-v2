@@ -527,13 +527,6 @@ export default function Dashboard() {
     }
   };
 
-  useEffect(() => {
-    const el = document.querySelector(".wallet-adapter-dropdown-list");
-    if (el) {
-      el.classList.add("absolute", "bottom-full", "top-auto", "z-[99999]");
-    }
-  }, []);
-
   if (!connected) {
     return (
       <div className="min-h-screen main-gradient flex items-center justify-center px-4">
@@ -544,7 +537,7 @@ export default function Dashboard() {
           <p className="text-white/70 font-poppins mb-6">
             Please connect your Solana wallet to access the SentrySol dashboard
           </p>
-          <WalletMultiButton className="!bg-sentry-sage !text-black !font-poppins !rounded-full hover:!bg-sentry-sage/90 z-[99999]" />
+          <WalletMultiButton className="!bg-sentry-sage !text-black !font-poppins !rounded-full hover:!bg-sentry-sage/90" />
           <div className="mt-6">
             <Link
               to="/"
@@ -578,8 +571,8 @@ export default function Dashboard() {
               Security Dashboard
             </span>
           </div>
-          <div className="relative z-[99999]">
-            <WalletMultiButton className="!bg-sentry-sage !text-black !font-poppins !rounded-full hover:!bg-sentry-sage/90" />
+          <div className="relative z-[100]">
+            <WalletMultiButton className="!bg-sentry-sage !text-black !font-poppins !rounded-full hover:!bg-sentry-sage/90 !z-50" />
           </div>
         </div>
       </header>
