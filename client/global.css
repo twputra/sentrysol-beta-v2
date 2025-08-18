@@ -146,7 +146,7 @@
 }
 
 .wallet-adapter-dropdown-list {
-  position: relative !important;
+  position: fixed !important;
   top: 100% !important;
   right: 0 !important;
   z-index: 9999 !important;
