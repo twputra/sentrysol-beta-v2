@@ -552,7 +552,7 @@ export default function Dashboard() {
   }
 
   return (
-    <div className="min-h-screen main-gradient absolute">
+    <div className="min-h-screen main-gradient">
       {/* Header */}
       <header className="border-b border-white/10 bg-black/20 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
