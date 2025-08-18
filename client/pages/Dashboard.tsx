@@ -537,7 +537,7 @@ export default function Dashboard() {
           <p className="text-white/70 font-poppins mb-6">
             Please connect your Solana wallet to access the SentrySol dashboard
           </p>
-          <WalletMultiButton className="!bg-sentry-sage !text-black !font-poppins !rounded-full hover:!bg-sentry-sage/90" />
+          <WalletMultiButton className="!bg-sentry-sage !text-black !font-poppins !rounded-full hover:!bg-sentry-sage/90 z-100" />
           <div className="mt-6">
             <Link
               to="/"
