@@ -149,7 +149,7 @@
   position: fixed !important;
   top: 100% !important;
   right: 0 !important;
-  z-index: 999999999 !important;
+  z-index: 2147483647 !important;
   background: rgba(0, 0, 0, 0.95) !important;
   backdrop-filter: blur(8px) !important;
   border: 1px solid rgba(255, 255, 255, 0.1) !important;
