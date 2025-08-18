@@ -161,6 +161,16 @@
   margin-top: 8px !important;
 }
 
+.wallet-adapter-button {
+  position: relative !important;
+  z-index: 2147483647 !important;
+}
+
+/* Ensure backdrop-blur elements don't interfere */
+.backdrop-blur-sm {
+  isolation: auto !important;
+}
+
 .wallet-adapter-dropdown-list-item {
   color: rgba(255, 255, 255, 0.8) !important;
   padding: 8px 12px !important;
