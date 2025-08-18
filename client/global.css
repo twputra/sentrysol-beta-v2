@@ -143,6 +143,7 @@
 /* Wallet Adapter Dropdown Fixes */
 .wallet-adapter-dropdown {
   position: relative !important;
+  z-index: 2147483647 !important;
 }
 
 .wallet-adapter-dropdown-list {
