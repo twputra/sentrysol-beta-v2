@@ -554,7 +554,7 @@ export default function Dashboard() {
   return (
     <div className="min-h-screen main-gradient">
       {/* Header */}
-      <header className="border-b border-white/10 bg-black/20 backdrop-blur-sm">
+      <header className="border-b border-white/10 bg-black/20 backdrop-blur-sm sticky top-0 z-[9999]">
         <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-4">
             <Link to="/" className="flex items-center gap-3">
@@ -577,7 +577,7 @@ export default function Dashboard() {
         </div>
       </header>
 
-      <div className="max-w-7xl mx-auto p-6 z-[-1]">
+      <div className="max-w-7xl mx-auto p-6">
         {/* Navigation Tabs */}
         <div className="bg-white/10 backdrop-blur-sm border border-white/10 rounded-2xl p-2 mb-8">
           <div className="flex gap-2 overflow-x-auto">
