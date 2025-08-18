@@ -49,7 +49,7 @@ export const ChatBox: React.FC<ChatBoxProps> = ({ onAddressAnalyze, isAnalyzing 
   // Function to handle streaming chat with Mistral
   const streamChatWithMistral = async (message: string, messageId: string) => {
     try {
-      const backendUrl = import.meta.env.DEV ? 'https://sentrysol-beta-production.up.railway.app' : window.location.origin;
+      const backendUrl = import.meta.env.DEV ? 'https://sentrysolbeta-production.up.railway.app' : window.location.origin;
 
       const response = await fetch(`${backendUrl}/chat-sentrysol-stream`, {
         method: 'POST',
@@ -211,7 +211,7 @@ IMPORTANT INSTRUCTIONS:
 
   // Function to start streaming analysis
   const startStreamingAnalysis = async (address: string, messageId: string) => {
-    const backendUrl = import.meta.env.DEV ? 'http://localhost:8000' : window.location.origin;
+    const backendUrl = import.meta.env.DEV ? 'https://sentrysolbeta-production.up.railway.app : window.location.origin;
     const analyzeUrl = `${backendUrl}/analyze/${address}`;
 
     setStreamingMessageId(messageId);
