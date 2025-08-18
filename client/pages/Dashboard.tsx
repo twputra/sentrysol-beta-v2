@@ -571,8 +571,10 @@ export default function Dashboard() {
               Security Dashboard
             </span>
           </div>
-          <div className="relative z-[9999]">
-            <WalletMultiButton className="!bg-sentry-sage !text-black !font-poppins !rounded-full hover:!bg-sentry-sage/90 z-100" />
+          <div className="relative z-[99999]">
+            <div className="wallet-adapter-dropdown relative z-[99999]">
+              <WalletMultiButton className="!bg-sentry-sage !text-black !font-poppins !rounded-full hover:!bg-sentry-sage/90 relative z-[99999]" />
+            </div>
           </div>
         </div>
       </header>
