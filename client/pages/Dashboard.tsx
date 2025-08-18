@@ -554,7 +554,7 @@ export default function Dashboard() {
   return (
     <div className="min-h-screen main-gradient">
       {/* Header */}
-      <header className="border-b border-white/10 bg-black/20 backdrop-blur-sm">
+      <header className="border-b border-white/10 bg-black/20 backdrop-blur-sm absolute">
         <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-4">
             <Link to="/" className="flex items-center gap-3">
