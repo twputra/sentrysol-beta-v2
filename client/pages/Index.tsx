@@ -155,7 +155,7 @@ export default function Index() {
       </nav>
 
       {/* Hero Section */}
-      <section className="min-h-screen flex flex-col items-center justify-center text-center px-8 lg:px-48 pt-20 relative">
+      <section className="min-h-screen flex flex-col items-center justify-center text-center px-8 lg:px-48 pt-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-teal-900/30 via-teal-950/10 to-black"></div>
         <div className="absolute inset-0 opacity-20">
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-teal-400/20 rounded-full blur-3xl"></div>
