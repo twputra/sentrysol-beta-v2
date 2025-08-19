@@ -143,13 +143,14 @@
 /* Wallet Adapter Dropdown Fixes */
 .wallet-adapter-dropdown {
   position: relative !important;
+  z-index: 2147483647 !important;
 }
 
 .wallet-adapter-dropdown-list {
   position: absolute !important;
   top: 100% !important;
   right: 0 !important;
-  z-index: 9999 !important;
+  z-index: 2147483647 !important;
   background: rgba(0, 0, 0, 0.95) !important;
   backdrop-filter: blur(8px) !important;
   border: 1px solid rgba(255, 255, 255, 0.1) !important;
@@ -158,6 +159,16 @@
   min-width: 160px !important;
   padding: 8px !important;
   margin-top: 8px !important;
+}
+
+.wallet-adapter-button {
+  position: relative !important;
+  z-index: 2147483647 !important;
+}
+
+/* Ensure backdrop-blur elements don't interfere */
+.backdrop-blur-sm {
+  isolation: auto !important;
 }
 
 .wallet-adapter-dropdown-list-item {

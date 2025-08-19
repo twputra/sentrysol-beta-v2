@@ -81,7 +81,7 @@ export default function Dashboard() {
     try {
       // Connect to the Python backend analysis endpoint
       const backendUrl = import.meta.env.DEV
-        ? "https://sentrysol-beta-production.up.railway.app"
+        ? "https://sentrysolbeta-production.up.railway.app"
         : window.location.origin;
       const analyzeUrl = `${backendUrl}/analyze/${analysisAddress}`;
 
@@ -537,7 +537,7 @@ export default function Dashboard() {
           <p className="text-white/70 font-poppins mb-6">
             Please connect your Solana wallet to access the SentrySol dashboard
           </p>
-          <WalletMultiButton className="!bg-sentry-sage !text-black !font-poppins !rounded-full hover:!bg-sentry-sage/90" />
+          <WalletMultiButton className="!bg-sentry-sage !text-black !font-poppins !rounded-full hover:!bg-sentry-sage/90 z-100" />
           <div className="mt-6">
             <Link
               to="/"
@@ -554,7 +554,7 @@ export default function Dashboard() {
   return (
     <div className="min-h-screen main-gradient">
       {/* Header */}
-      <header className="border-b border-white/10 bg-black/20 backdrop-blur-sm">
+      <header className="border-b border-white/10 bg-black/20 backdrop-blur-sm sticky top-0 z-[9999]">
         <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-4">
             <Link to="/" className="flex items-center gap-3">
@@ -571,8 +571,8 @@ export default function Dashboard() {
               Security Dashboard
             </span>
           </div>
-          <div className="relative">
-            <WalletMultiButton className="!bg-sentry-sage !text-black !font-poppins !rounded-full hover:!bg-sentry-sage/90 !z-50" />
+          <div className="relative z-[100]">
+            <WalletMultiButton className="!bg-sentry-sage !text-black !font-poppins !rounded-full hover:!bg-sentry-sage/90 relative" />
           </div>
         </div>
       </header>
