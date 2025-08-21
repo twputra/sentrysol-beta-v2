@@ -3,30 +3,35 @@
 ## Features Implemented
 
 ### 1. Solana Wallet Integration
+
 - **Wallet Adapter**: Integrated with `@solana/wallet-adapter-react`
 - **Supported Wallets**: Phantom, Solflare, Torus
 - **Auto-connect**: Automatically connects to previously connected wallets
 - **Network**: Configured for Solana Mainnet
 
 ### 2. Navigation Flow
+
 - **Connect Wallet**: Both "Connect" buttons in navbar now open wallet selection modal
-- **Get Started**: 
+- **Get Started**:
   - If wallet not connected → Opens wallet selection modal
   - If wallet connected → Redirects to `/dashboard`
 - **Start Now**: Same behavior as Get Started button
 
 ### 3. Dashboard Page
+
 - **Authentication**: Requires connected wallet to access
 - **Wallet Display**: Shows connected wallet address
 - **Analysis Integration**: Ready to connect to SentrySol backend
 - **Real-time Updates**: Uses EventSource for streaming analysis results
 
 ### 4. Backend Integration
+
 - **API Service**: `client/lib/api.ts` handles backend communication
 - **Environment Variables**: Backend URL configurable via `VITE_BACKEND_URL`
 - **Health Checks**: Built-in backend connectivity validation
 
 ### 5. Supabase Integration
+
 - **Configuration**: Ready to connect with provided Supabase instance
 - **Data Storage**: Analysis results can be saved to Supabase
 - **History**: Wallet analysis history retrieval
@@ -37,7 +42,7 @@ Set these using the DevServerControl tool:
 
 ```bash
 VITE_SUPABASE_KEY=your_supabase_anon_key_here
-VITE_BACKEND_URL=http://localhost:8000
+VITE_BACKEND_URL=https://sentrysolbeta-production.up.railway.app
 ```
 
 ## Backend Repository
@@ -46,6 +51,7 @@ The integration expects the SentrySol backend from:
 https://github.com/sentrysol666-sys/SentrySol-Demo.git
 
 ### Expected Endpoints:
+
 - `GET /health` - Health check
 - `GET /analyze/{wallet_address}` - EventSource endpoint for streaming analysis
 

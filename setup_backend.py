@@ -82,7 +82,7 @@ def main():
     print("\n📋 Next steps:")
     print("1. Make sure your .env file has valid API keys")
     print("2. Run the backend server: uvicorn server:app --reload")
-    print("3. Backend will be available at: http://localhost:8000")
+    print("3. Backend will be available at: https://sentrysolbeta-production.up.railway.app")
     print("4. Start the frontend development server")
     
     return True
