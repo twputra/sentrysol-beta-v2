@@ -18,10 +18,10 @@ export function createServer() {
 
   app.get("/api/demo", handleDemo);
 
-  // Backend API routes (mock Solana analysis)
-  app.get("/health", handleHealth);
-  app.get("/analyze/:address", handleAnalyzeWallet);
-  app.post("/chat", handleChatAnalysis);
+  // Backend API routes (sekarang dengan prefix /api)
+  app.get("/api/health", handleHealth);
+  app.get("/api/analyze/:address", handleAnalyzeWallet);
+  app.post("/api/chat", handleChatAnalysis);
 
   return app;
 }
